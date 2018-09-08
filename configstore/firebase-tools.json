@@ -1,0 +1,36 @@
+{
+	"analytics-uuid": "3415a527-efc1-46d6-889b-2f0ab6c7c2dc",
+	"usage": true,
+	"motd": {
+		"minVersion": "3.0.5"
+	},
+	"motd.fetched": 1516386364031,
+	"user": {
+		"azp": "563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com",
+		"aud": "563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com",
+		"sub": "115302996948824154724",
+		"email": "samkumar15@gmail.com",
+		"email_verified": true,
+		"at_hash": "CSKi2Ktbxy5oAfWfR65bRA",
+		"exp": 1516389973,
+		"iss": "accounts.google.com",
+		"iat": 1516386373
+	},
+	"tokens": {
+		"expires_at": 1516390006207,
+		"refresh_token": "1/b_3AYvKw6bChJuQvXj0xW0zK_AlvTsF9RRLAOYHbrJM",
+		"scopes": [
+			"email",
+			"https://www.googleapis.com/auth/cloudplatformprojects.readonly",
+			"https://www.googleapis.com/auth/firebase",
+			"openid"
+		],
+		"access_token": "ya29.GmNHBYRV7MDXLtLgm3i6ZXtzUFQ6W8p9_ApZtrgM6u6IQ_q51ZS63OjKLpKU9jJYUcs1utaHlY28AlojvNEX9GwP5o8e_MOJyenxeS74wch8HT07kBBGaYIsMg5D7j32huniWyw",
+		"token_type": "Bearer",
+		"expires_in": 3600,
+		"id_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6Ijk3OGNhNDExOGJmMTg4M2IzMTZiYmNhNmNlOTA0NGQ5OTc3ZjIwMjcifQ.eyJhenAiOiI1NjM1ODQzMzU4NjktZmdyaGdtZDQ3YnFuZWtpajVpOGI1cHIwM2hvODQ5ZTYuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJhdWQiOiI1NjM1ODQzMzU4NjktZmdyaGdtZDQ3YnFuZWtpajVpOGI1cHIwM2hvODQ5ZTYuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb20iLCJzdWIiOiIxMTUzMDI5OTY5NDg4MjQxNTQ3MjQiLCJlbWFpbCI6InNhbWt1bWFyMTVAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImF0X2hhc2giOiJlZEMwcmRpRTZoOUQ5RTgwWFFicmZnIiwiZXhwIjoxNTE2MzkwMDA2LCJpc3MiOiJhY2NvdW50cy5nb29nbGUuY29tIiwiaWF0IjoxNTE2Mzg2NDA2fQ.dDWReEJ0TDXoZVMy-vEbcUeY1vcKq9p6x7OkiKq-bTCUnrw1aIW52LJFyjs-Fw1_NoOLcrzuAFmP5eVuYGFSXQw0VOlCzkS1pHN8-l-wkiqL8uJNv1_3YmTxiubBisJ288euH8d2T15V2y6X4bMk5_McR5P2m61tjn3mNf2uD2A9N7msEM72mVa4zrB6FR-0S6UH4W0E9u-N_nxlTOpqZhJ9JLXGfbL2Lv5liTlUN_tim6adg0V9e1P-VSz6ngmdznlYvKY-wDE1zJLuf_Utnl7bDIk7FkyNZFscTmsDwy6g9D3AKtTVmwDsy0gX68xzWAcuKJJoM9dtpRMKSl2B-Q"
+	},
+	"activeProjects": {
+		"/home/sambath": "front-end-life"
+	}
+}

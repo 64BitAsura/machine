@@ -1,0 +1,5 @@
+map <S-+> zoom in
+map <S--> zoom out
+map <S-f> full-up
+map <S-d> full-down-
+set recolor "true"

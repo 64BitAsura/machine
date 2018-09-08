@@ -1,0 +1,22 @@
+#!/bin/sh
+(
+echo "10" ; sleep 1
+echo "# Shutdown in 5 seconds" ; sleep 1
+echo "20" ; sleep 1
+echo "# Shutdown in 4 seconds" ; sleep 1
+echo "50" ; sleep 1
+echo "# Shutdown in 3 seconds" ; sleep 1
+echo "75" ; sleep 1
+echo "# Shutdown in 2 seconds" ; sleep 1
+echo "100" ; $HOME/.config/i3/i3_exit shutdown
+) |
+zenity --progress \
+  --title="Power" \
+  --text="" \
+  --auto-close \
+  --percentage=0
+
+if [ "$?" = -1 ] ; then
+        zenity --error \
+          --text="Shutdown cancelled."
+fi
