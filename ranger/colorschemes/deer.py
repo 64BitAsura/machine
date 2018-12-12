@@ -18,10 +18,11 @@ class Default(ColorScheme):
 				fg = black
 			if context.border:
 				attr = normal
-				fg = black
+				fg = white
 			if context.media:
 				if context.image:
-					fg = black
+                                        attr = normal
+					fg = white
 				else:
 					fg = white
 			if context.container:
@@ -80,7 +81,7 @@ class Default(ColorScheme):
 		elif context.in_statusbar:
 			if context.permissions:
 				if context.good:
-					fg = black
+					fg = blue
 				elif context.bad:
 					fg = red
 			if context.marked:

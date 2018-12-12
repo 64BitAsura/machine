@@ -1,3 +1,6 @@
+[options]
+#font = ohsnap7x12r.icons 12
+
 [colors]
 # Base16 Default Dark
 # Author: Chris Kempson (http://chriskempson.com)
@@ -5,7 +8,7 @@
 foreground      = #d8d8d8
 foreground_bold = #e8e8e8
 cursor          = #e8e8e8
-background      = #181818
+background      =  rgba(18, 18, 18, 0.95)
 
 # 16 color space
 

@@ -9,3 +9,6 @@ vi notify-adapter.py
 touch notify-adapter.py
 search inve
 cd .vim
+q
+open_with 
+open_with vim
