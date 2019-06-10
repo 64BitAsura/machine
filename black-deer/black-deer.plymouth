@@ -1,0 +1,8 @@
+[Plymouth Theme]
+Name=black-deer
+Description=A theme that features a blank background with a logo.
+ModuleName=script
+
+[script]
+ImageDir=/usr/share/plymouth/themes/black-deer
+ScriptFile=/usr/share/plymouth/themes/black-deer/dark-ubuntu-logo.script

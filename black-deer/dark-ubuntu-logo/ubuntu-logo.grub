@@ -1,0 +1,3 @@
+if background_color 12,12,12; then
+  clear
+fi
