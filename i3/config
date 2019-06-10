@@ -62,7 +62,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec rofi -show run -lines 5 -eh 2 -width 100 -padding 100 -opacity "80" -bw 0 -bc "$base01" -bg "$base02" -fg "$base07" -hlbg "$base05" -font "ohsnap7x14r.icons 22" -hlfg "#9575cd" -run-list-command ". $HOME/.config/i3/zsh_aliases_and_functions.sh" -run-command "/bin/zsh -i -c '{cmd}'" -rnow
+bindsym $mod+d exec rofi -show run -theme $HOME/.config/rofi/theme -run-list-command ". $HOME/.config/i3/zsh_aliases_and_functions.sh" -run-command "/bin/zsh -i -c '{cmd}'" -rnow
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
@@ -298,12 +298,10 @@ bindsym $mod+shift+x exec $locker
 exec_always --no-startup-id nm-applet
 exec_always --no-startup-id blueman-applet &
 exec_always xautolock -time 10 -notify 20 -notifier 'notify-send -u low -t 10000 -i messagebox_warning Inactive "Screen is going lock under a minute"' -locker 'i3lock -ntbfe -p default -i $HOME/.config/i3/bg.png'
-exec google-chrome-stable
-exec google-chrome-stable --new-window  https://www.youtube.com
+exec brave
 exec mattermost-desktop
 exec pycharm
-#exec /home/sambath/tools/idea-IU-172.4343.14/bin/idea.sh  &> /dev/null &
-exec /home/sambath/tools/apps/WebStorm/ch-2/181.4445.29/bin/webstorm.sh &> /dev/null &
+exec --no-startup-id dunst -conf $HOME/dunst/dunstrc-minimal
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
@@ -348,7 +346,7 @@ mode $displayMode {
 # Screen layout
 #exec xrandr --output HDMI-2 --off --output HDMI-1 --off --output DP-1 --off --output eDP-1 --primary --mode 1920x1080 --pos 0x0 --rotate normal --output DP-2 --off
 
-exec --no-startup-id compton -f
+exec --no-startup-id compton -f --config $HOME/.config/compton/config
 #exec --no-startup-id conky -c $HOME/.config/conky/conky.config
 #exec_always --no-startup-id conky -c $HOME/.config/conky/conky_D2.config
 

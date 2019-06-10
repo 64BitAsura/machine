@@ -13,4 +13,4 @@ echo ""
 
 echo ""
 
-echo "#B388FF"
+#echo "#B388FF"

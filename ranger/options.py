@@ -32,7 +32,7 @@ show_hidden = True
 # Which script is used to generate file previews?
 # ranger ships with scope.sh, a script that calls external programs (see
 # README for dependencies) to preview images, archives, etc.
-preview_script = '~/.config/ranger/scope.sh'
+#preview_script = '~/.config/ranger/scope.sh'
 
 # Use that external preview script or display internal plain text previews?
 use_preview_script = True

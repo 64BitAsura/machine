@@ -21,7 +21,7 @@ class Default(ColorScheme):
 				fg = white
 			if context.media:
 				if context.image:
-                                        attr = normal
+					attr = normal
 					fg = white
 				else:
 					fg = white

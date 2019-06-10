@@ -1,8 +1,6 @@
 l 
-cd .config/
 gedit
 search nerd
-
 mkdir calendar-notify
 vim notify-adapter.py
 vi notify-adapter.py
@@ -10,5 +8,8 @@ touch notify-adapter.py
 search inve
 cd .vim
 q
+
 open_with 
 open_with vim
+Plug 'ryanoasis/vim-devicons'
+cd .config/
