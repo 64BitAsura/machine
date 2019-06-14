@@ -41,7 +41,7 @@ secondary = #bf5f4d
 ;=====================================================
 
 [sizes]
-bar-width = 100%
+bar-width = 80%
 bar-height = 35
 
 bar-offset-x = 100
@@ -50,6 +50,16 @@ bar-bottom-gap = 0
 
 ;=====================================================
 
+[bar/dummy]
+monitor = VGA-1
+width = 100%
+height = ${sizes.bar-height}
+offset-y = 10
+background = #00000000
+fixed-center = true
+
+modules-left = blank
+
 [bar/kingk22]
 monitor = VGA-1
 bottom = false
@@ -57,44 +67,45 @@ fixed-center = true
 width = ${sizes.bar-width}
 height = ${sizes.bar-height}
 radius = 3.0
-
+override-redirect= true
 background = ${colours.background}
 foreground = ${colours.foreground}
 
-line-size = 2
+line-size = 1
 line-color = #ffffff
 
-border-size = 0
-border-color = #00000000
-border-left-size = ${sizes.bar-offset-x}
-border-right-size = ${sizes.bar-offset-x}
-border-top-size = ${sizes.bar-top-gap}
-border-bottom-size = ${sizes.bar-bottom-gap}
+;border-size = 0
+;border-color = #00000000
+;border-left-size = ${sizes.bar-offset-x}
+;border-right-size = ${sizes.bar-offset-x}
+;border-top-size = ${sizes.bar-top-gap}
+;border-bottom-size = ${sizes.bar-bottom-gap}
 
-;offset-x = 10%
-;offset-y = 0%
+offset-x = 10%
+offset-y = 25
 
 padding-left = 0
-padding-right = 5
+padding-right = 2
 
-module-margin-left = 2
+module-margin-left = 0
 module-margin-right = 2
 
-font-0 = Wuncon Siji
-font-1 = FontAwesome:size=18;0
-font-2 = Iosevka:weight=medium:pixelsize=18;0
-font-3 = NotoSans-Regular:size=8;0
-font-4 = Kochi Gothic:size=8;0
+font-0 = ohsnap7x14r.icons:size=14;3
+font-2 = SauceCodePro Nerd Font Mono:style=medium:pixelsize=18;3
+font-1 = FontAwesome:size=14;3
+font-3 = NotoSans-Regular:size=14;3
+font-4 = Kochi Gothic:size=14;3
+font-5 = SauceCodePro Nerd Font Mono:style=medium:pixelsize=25;5
 
 modules-left = i3
-modules-center = xwindow
-modules-right = pulseaudio-rofi battery date
+modules-center = blank
+modules-right = ssh firewall docker memory temperature pulseaudio-rofi battery date
 
 ;separator = |
 
-;tray-position = right
-;tray-detached = false
-;tray-padding = 1
+tray-position = right
+tray-detached = false
+tray-padding = 1
 
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
@@ -136,7 +147,11 @@ card = intel_backlight
 format-foreground = ${colours.primary}
 
 ;=====================================================
+[module/blank]
+type = internal/xwindow
+label = " "
 
+;=====================================================
 [module/xbacklight]
 type = internal/xbacklight
 
@@ -204,6 +219,45 @@ double-click-right = bluetoothctl -- power off
 
 ;=====================================================
 
+[module/docker]
+type = custom/script
+
+exec = ~/.config/polybar/docker.sh
+
+;tail = true
+
+format-foreground = ${colours.primary}
+
+interval = 10
+
+;=====================================================
+ 
+[module/firewall]
+type = custom/script
+
+exec = ~/.config/polybar/ufw.sh
+ 
+;tail = true
+ 
+format-foreground = ${colours.primary}
+ 
+interval = 10
+ 
+;=====================================================
+ 
+[module/ssh]
+type = custom/script
+
+exec = ~/.config/polybar/ssh.sh
+ 
+;tail = true
+ 
+format-foreground = ${colours.primary}
+ 
+interval = 10
+ 
+;=====================================================
+
 [module/cpu]
 type = internal/cpu
 interval = 1
@@ -262,24 +316,24 @@ label-mode = %mode%
 label-mode-padding = 2
 label-mode-foreground = ${colours.purple}
 
-;label-focused = %name%
-label-focused = ""
+label-focused = %name%
+;label-focused = ""
 label-focused-foreground = ${colours.purple}
 ;label-focused-background = ${colours.background-alt}
-;label-focused-underline = ${colours.green}
+label-focused-underline = ${colours.primary}
 label-focused-padding = 4
 
-;label-unfocused = %name%
-label-unfocused = ""
+label-unfocused = %name%
+;label-unfocused = ""
 label-unfocused-padding = 4
 label-unfocused-foreground = ${colours.primary}
 
 label-visible = %name%
-label-visible-underline = ${colours.primary}
+;label-visible-underline = ${colours.primary}
 label-visible-padding = 4
 
-;label-urgent = %name%
-label-urgent = ""
+label-urgent = %name%
+;label-urgent = ""
 ;label-urgent-background = ${colours.purple}
 label-urgent-foreground = ${colours.alert}
 ;label-urgent-underline = ${colours.alert}
@@ -292,7 +346,7 @@ type = internal/memory
 interval = 2
 
 format = <label>
-label = RAM %percentage_used%%
+label =兩 %percentage_used%%
 
 ;=====================================================
 
@@ -374,8 +428,8 @@ format = <label>
 format-warn = <label-warn>
 format-warn-underline = ${colours.alert}
 
-label = %temperature%
-label-warn = TEMP: %temperature%
+label = %temperature-c%
+label-warn = %temperature-c%
 
 ;=====================================================
 
@@ -394,14 +448,14 @@ scroll-down = ~/.config/polybar/pulseaudio-rofi.sh --volume_down
 format =  <label>
 format-foreground = ${colours.primary}
 
-;[module/volume]
-;type = internal/volume
-;format-volume = <label-volume>
-;label-volume =  %percentage%%
-;format-muted = <label-muted>
-;label-muted =  mute
-;format-volume-foreground = ${colours.primary}
-;format-muted-foreground = ${colours.purple}
+[module/volume]
+type = internal/volume
+format-volume = <label-volume>
+label-volume =  %percentage%%
+format-muted = <label-muted>
+label-muted =  mute
+format-volume-foreground = ${colours.primary}
+format-muted-foreground = ${colours.purple}
 
 ;[module/pulseaudio]
 ;type = internal/pulseaudio
