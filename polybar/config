@@ -82,7 +82,7 @@ line-color = #ffffff
 ;border-bottom-size = ${sizes.bar-bottom-gap}
 
 offset-x = 10%
-offset-y = 25
+offset-y = 2
 
 padding-left = 0
 padding-right = 2
@@ -96,6 +96,7 @@ font-1 = FontAwesome:size=14;3
 font-3 = NotoSans-Regular:size=14;3
 font-4 = Kochi Gothic:size=14;3
 font-5 = SauceCodePro Nerd Font Mono:style=medium:pixelsize=25;5
+font-6 = Font Awesome 5 Free:style=solid:pixelsize=14;3
 
 modules-left = i3
 modules-center = blank
@@ -345,9 +346,8 @@ label-urgent-padding = 4
 type = internal/memory
 interval = 2
 
-format = <label>
-label =兩 %percentage_used%%
-
+format = %{T7} %{T-}<label>
+label = %percentage_used%%
 ;=====================================================
 
 [module/mpd]
