@@ -66,7 +66,7 @@ bottom = false
 fixed-center = true
 width = ${sizes.bar-width}
 height = ${sizes.bar-height}
-radius = 3.0
+radius = 4.0
 override-redirect= true
 background = ${colours.background}
 foreground = ${colours.foreground}
@@ -82,7 +82,7 @@ line-color = #ffffff
 ;border-bottom-size = ${sizes.bar-bottom-gap}
 
 offset-x = 10%
-offset-y = 2
+offset-y = 5
 
 padding-left = 0
 padding-right = 2
@@ -105,8 +105,11 @@ modules-right = ssh firewall docker memory temperature pulseaudio-rofi battery d
 ;separator = |
 
 tray-position = right
+tray-transparent = false
+tray-background = ${colours.background}
 tray-detached = false
 tray-padding = 1
+tray-scale = 1.0
 
 scroll-up = i3wm-wsnext
 scroll-down = i3wm-wsprev
@@ -119,6 +122,69 @@ label-indicator-background = ${colours.primary}
 label-indicator-underline = ${colours.primary}
 
 ;=====================================================
+[bar/kingk22-2]
+monitor = DP-1
+bottom = false
+fixed-center = true
+width = ${sizes.bar-width}
+height = ${sizes.bar-height}
+radius = 4.0
+override-redirect= true
+background = ${colours.background}
+foreground = ${colours.foreground}
+
+line-size = 1
+line-color = #ffffff
+
+;border-size = 0
+;border-color = #00000000
+;border-left-size = ${sizes.bar-offset-x}
+;border-right-size = ${sizes.bar-offset-x}
+;border-top-size = ${sizes.bar-top-gap}
+;border-bottom-size = ${sizes.bar-bottom-gap}
+
+offset-x = 10%
+offset-y = 5
+
+padding-left = 0
+padding-right = 2
+
+module-margin-left = 0
+module-margin-right = 2
+
+font-0 = ohsnap7x14r.icons:size=14;3
+font-2 = SauceCodePro Nerd Font Mono:style=medium:pixelsize=18;3
+font-1 = FontAwesome:size=14;3
+font-3 = NotoSans-Regular:size=14;3
+font-4 = Kochi Gothic:size=14;3
+font-5 = SauceCodePro Nerd Font Mono:style=medium:pixelsize=25;5
+font-6 = Font Awesome 5 Free:style=solid:pixelsize=14;3
+
+modules-left = i3
+modules-center = blank
+modules-right = ssh firewall docker memory temperature pulseaudio-rofi battery date
+
+;separator = |
+
+tray-position = right
+tray-transparent = false
+tray-background = ${colours.background}
+tray-detached = false
+tray-padding = 1
+tray-scale = 1.0
+
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+
+label-layout-underline = ${colours.primary}
+
+label-indicator-padding = 2
+label-indicator-margin = 1
+label-indicator-background = ${colours.primary}
+label-indicator-underline = ${colours.primary}
+
+;=====================================================
+
 
 [global/wm]
 margin-top = 5
@@ -314,7 +380,7 @@ wrapping-scroll = true
 pin-workspaces = true
 
 label-mode = %mode%
-label-mode-padding = 2
+label-mode-padding = 1
 label-mode-foreground = ${colours.purple}
 
 label-focused = %name%
@@ -322,23 +388,23 @@ label-focused = %name%
 label-focused-foreground = ${colours.purple}
 ;label-focused-background = ${colours.background-alt}
 label-focused-underline = ${colours.primary}
-label-focused-padding = 4
+label-focused-padding = 1
 
 label-unfocused = %name%
 ;label-unfocused = ""
-label-unfocused-padding = 4
+label-unfocused-padding = 1
 label-unfocused-foreground = ${colours.primary}
 
 label-visible = %name%
 ;label-visible-underline = ${colours.primary}
-label-visible-padding = 4
+label-visible-padding = 1
 
 label-urgent = %name%
 ;label-urgent = ""
-;label-urgent-background = ${colours.purple}
-label-urgent-foreground = ${colours.alert}
-;label-urgent-underline = ${colours.alert}
-label-urgent-padding = 4
+label-urgent-background = ${colours.purple}
+label-urgent-foreground = ${colours.background}
+label-urgent-underline = ${colours.background}
+label-urgent-padding = 1
 
 ;=====================================================
 
