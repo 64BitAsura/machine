@@ -15,7 +15,7 @@ f = urllib.request.urlopen(currencyurl)
 obj = json.loads(f.read())
 res="";
 for c in currencies.split(','):
-    res += "{:,.3f}".format(1/obj[c.upper()]).replace(',',' ') + " zł"
+    res += "{:,.3f}".format(1/obj[c.upper()]).replace(',',' ') + " %{T6}%{T-}"
 
 # some unicode currency code replacement (optional)
 res = res.replace("EUR", "zł")
