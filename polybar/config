@@ -100,7 +100,7 @@ font-6 = Font Awesome 5 Free:style=solid:pixelsize=14;3
 
 modules-left = i3
 modules-center = blank
-modules-right = ssh firewall docker memory temperature pulseaudio-rofi battery date
+modules-right = zlotyRate ssh firewall docker memory temperature pulseaudio-rofi battery date
 
 ;separator = |
 
@@ -162,7 +162,7 @@ font-6 = Font Awesome 5 Free:style=solid:pixelsize=14;3
 
 modules-left = i3
 modules-center = blank
-modules-right = ssh firewall docker memory temperature pulseaudio-rofi battery date
+modules-right = zlotyRate ssh firewall docker memory temperature pulseaudio-rofi battery date
 
 ;separator = |
 
@@ -437,6 +437,16 @@ bar-progress-indicator = |
 bar-progress-fill = ─
 bar-progress-empty = ─
 
+
+;=====================================================
+
+[module/zlotyRate]
+type = custom/script
+exec = $HOME/.config/polybar/currencyrates.py eur pln
+interval=600
+click-left = brave --new-window "https://freecurrencyrates.com/en/exchange-rate-history/EUR-PLN/2019/cbr"
+click-right = brave --new-window "https://freecurrencyrates.com/en/convert-EUR-PLN/cbr"
+
 ;=====================================================
 
 [module/wlan]
@@ -453,7 +463,7 @@ label-disconnected =  wifi: dc
 format-connected-foreground = ${colours.primary}
 format-disconnected-foreground = ${colours.purple}
 
-;==========================
+;=====================================================
 
 [module/eth]
 type = internal/network
