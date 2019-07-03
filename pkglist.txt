@@ -2,7 +2,6 @@ alacritty
 arandr
 autoconf
 automake
-awesome-terminal-fonts
 bash
 bash-completion
 binutils
@@ -58,7 +57,6 @@ i3status
 inetutils
 iproute2
 iputils
-jdk8-openjdk
 jfsutils
 jsoncpp
 less
@@ -76,12 +74,8 @@ make
 man-db
 man-pages
 mattermost-desktop
-maven
 mdadm
-nano
 nemo
-nerd-fonts-complete-mono-glyphs
-nerd-fonts-source-code-pro
 netctl
 network-manager-applet
 networkmanager-vpnc
@@ -129,8 +123,6 @@ texinfo
 the_silver_searcher
 tig
 ttf-dejavu
-ttf-dejavu-sans-mono-powerline-git
-ttf-devicons
 ttf-font-awesome
 ttf-font-awesome-4
 ufw

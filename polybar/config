@@ -61,7 +61,7 @@ fixed-center = true
 modules-left = blank
 
 [bar/kingk22]
-monitor = VGA-1
+monitor = DP-2-1
 bottom = false
 fixed-center = true
 width = ${sizes.bar-width}
@@ -123,7 +123,7 @@ label-indicator-underline = ${colours.primary}
 
 ;=====================================================
 [bar/kingk22-2]
-monitor = DP-1
+monitor = DP-2-2
 bottom = false
 fixed-center = true
 width = ${sizes.bar-width}

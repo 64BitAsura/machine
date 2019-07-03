@@ -351,14 +351,4 @@ exec --no-startup-id $HOME/.config/polybar/launch.sh
 #exec --no-startup-id conky -c $HOME/.config/conky/conky.config
 #exec_always --no-startup-id conky -c $HOME/.config/conky/conky_D2.config
 
-bindsym $mod+Shift+d workspace $workspace8; workspace $workspace8 focus; exec i3-msg "append_layout $HOME/.config/i3/workspace-8.json"
 
-exec killall conky
- exec sleep 30
- exec $HOME/.screenlayout/work.sh
- exec workspace $workspace1 focus
- exec i3-msg 'move workspace to output DP-1'
- exec  workspace $workspace4 focus
- exec i3-msg 'move workspace to output DP-2-2'
- exec workspace $workspace2 focus
- exec_always i3-msg 'move workspace to output DP-2-1'
