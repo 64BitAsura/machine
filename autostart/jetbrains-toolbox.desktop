@@ -1,5 +1,5 @@
 [Desktop Entry]
-Exec=/home/sambath/Downloads/jetbrains-toolbox-1.14.5179/jetbrains-toolbox --minimize
+Exec=/home/sambath/.local/share/JetBrains/Toolbox/bin/jetbrains-toolbox --minimize
 Icon=/home/sambath/.local/share/JetBrains/Toolbox/toolbox.svg
 MimeType=x-scheme-handler/jetbrains;
 Name=JetBrains Toolbox

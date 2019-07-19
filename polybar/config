@@ -59,7 +59,68 @@ background = #00000000
 fixed-center = true
 
 modules-left = blank
+[bar/kingk22-1]
+monitor = eDP-1
+bottom = false
+fixed-center = true
+width = ${sizes.bar-width}
+height = ${sizes.bar-height}
+radius = 4.0
+override-redirect= true
+background = ${colours.background}
+foreground = ${colours.foreground}
 
+line-size = 1
+line-color = #ffffff
+
+;border-size = 0
+;border-color = #00000000
+;border-left-size = ${sizes.bar-offset-x}
+;border-right-size = ${sizes.bar-offset-x}
+;border-top-size = ${sizes.bar-top-gap}
+;border-bottom-size = ${sizes.bar-bottom-gap}
+
+offset-x = 10%
+offset-y = 5
+
+padding-left = 0
+padding-right = 2
+
+module-margin-left = 0
+module-margin-right = 2
+
+font-0 = ohsnap7x14r.icons:size=14;3
+font-2 = SauceCodePro Nerd Font Mono:style=medium:pixelsize=18;3
+font-1 = FontAwesome:size=14;3
+font-3 = NotoSans-Regular:size=14;3
+font-4 = Kochi Gothic:size=14;3
+font-5 = SauceCodePro Nerd Font Mono:style=medium:pixelsize=25;5
+font-6 = Font Awesome 5 Free:style=solid:pixelsize=14;3
+
+modules-left = i3
+modules-center = blank
+modules-right = zlotyRate ssh firewall docker memory temperature pulseaudio-rofi battery date
+
+;separator = |
+
+tray-position = right
+tray-transparent = false
+tray-background = #000000
+tray-detached = false
+tray-padding = 1
+tray-scale = 1.0
+
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+
+label-layout-underline = ${colours.primary}
+
+label-indicator-padding = 2
+label-indicator-margin = 1
+label-indicator-background = ${colours.primary}
+label-indicator-underline = ${colours.primary}
+
+;
 [bar/kingk22]
 monitor = DP-2-1
 bottom = false

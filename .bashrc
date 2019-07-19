@@ -170,4 +170,4 @@ eval $('ssh-agent') >> /dev/null
 
 source ~/.profile
 
-alias pycharm=".$HOME/.local/share/JetBrains/Toolbox/apps/PyCharm-P/ch-0/191.7141.48/bin/pycharm.sh"
+alias pycharm="$HOME/Work/tools/apps/PyCharm-P/ch-0/191.7479.30/bin/pycharm.sh &"

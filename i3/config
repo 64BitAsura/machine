@@ -56,13 +56,13 @@ font pango: ohsnap7x14r.icons 14, devicons 12, FontAwesome 12
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec --no-startup-d termite
 
 # kill focused window
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec rofi -show run -theme $HOME/.config/rofi/theme -run-list-command ". $HOME/.config/i3/zsh_aliases_and_functions.sh" -run-command "/bin/bash -i -c '{cmd}'" -rnow
+bindsym $mod+d exec --no-startup-id rofi -show run -theme $HOME/.config/rofi/theme -run-list-command ". $HOME/.config/i3/zsh_aliases_and_functions.sh" -run-command "/bin/bash -i -c '{cmd}'" -rnow
 
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
@@ -176,7 +176,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec --no-startup-id "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -291,17 +291,17 @@ mode "$mode_power" {
 #        }
 #}
 
-set $locker i3lock -tnbfe -p default -i $HOME/.config/i3/bg.png
+set $locker i3lock -tnbfe -p default -i $HOME/.config/minimal_deer.png
 
 exec_always --no-startup-id nitrogen --restore
-bindsym $mod+shift+x exec $locker
+bindsym $mod+shift+x exec --no-startup-id $locker
 exec_always --no-startup-id nm-applet
 exec_always --no-startup-id blueman-applet &
-exec_always xautolock -time 10 -notify 20 -notifier 'notify-send -u low -t 10000 -i messagebox_warning Inactive "Screen is going lock under a minute"' -locker 'i3lock -ntbfe -p default -i $HOME/.config/i3/bg.png'
-exec brave
-exec mattermost-desktop
-exec pycharm
-exec --no-startup-id dunst -conf $HOME/dunst/dunstrc-minimal
+exec_always --no-startup-id xautolock -time 10 -notify 20 -notifier 'notify-send -u low -t 10000 -i messagebox_warning Inactive "Screen is going lock under a minute"' -locker 'i3lock -ntbfe -p default -i $HOME/.config/i3/bg.png'
+exec --no-startup-id brave
+exec --no-startup-id teams-for-linux
+exec --no-startup-id pycharm
+exec --no-startup-id dunst -conf $HOME/.config/dunst/dunstrc-minimal
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
@@ -309,17 +309,17 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #d
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
 # Screen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec  --no-startup-id xbacklight -inc 20 # increase screen brightness
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 20 # decrease screen brightness
 
 # Touchpad controls
-bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
+bindsym XF86TouchpadToggle exec --no-startup-id /some/path/toggletouchpad.sh # toggle touchpad
 
 # Media player controls
-bindsym XF86AudioPlay exec playerctl play
-bindsym XF86AudioPause exec playerctl pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioPlay exec --no-startup-id playerctl play
+bindsym XF86AudioPause exec --no-startup-id playerctl pause
+bindsym XF86AudioNext exec --no-startup-id playerctl next
+bindsym XF86AudioPrev exec --no-startup-id playerctl previous
 
 # Move conatiner to workspace
 bindsym $mod+Shift+greater move container to output right
@@ -333,11 +333,9 @@ bindsym $mod+c move workspace to output left
 set $displayMode "Set display mode [w]ork [l]aptop [h]ome"
 bindsym $mod+i mode $displayMode
 mode $displayMode {
-    bindsym w exec killall conky; exec sleep 30; exec $HOME/.screenlayout/work.sh; exec --no-startup-id conky -c $HOME/.config/conky/conky_eden.config; exec sleep 20; exec --no-startup-id conky -c $HOME/.config/conky/conky_D2.config; exec workspace $workspace1 focus; exec i3-msg 'move workspace to output DP-2-2'; exec workspace $workspace3 focus; exec i3-msg 'move workspace to output DP-2-2'
+    bindsym w exec --no-startup-id exec $HOME/.screenlayout/work.sh; 
                 
-    bindsym h exec $HOME/.screenlayout/home.sh
-                
-    bindsym l exec killall conky; exec sleep 20;exec xrandr --auto && xrandr --output DP-2-1 --off;exec xrandr --auto && xrandr --output DP-2-2 --off; exec $HOME/.screenlayout/standalone.sh; exec --no-startup-id conky -c $HOME/.config/conky/conky.config;
+    bindsym h exec --no-startup-id $HOME/.screenlayout/home.sh
 
     bindsym Return mode "default"
     bindsym Escape mode "default"
