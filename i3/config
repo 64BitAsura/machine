@@ -291,13 +291,13 @@ mode "$mode_power" {
 #        }
 #}
 
-set $locker i3lock -tnbfe -p default -i $HOME/.config/minimal_deer.png
+set $locker i3lock -tnbfe -p default -i $HOME/.config/minimal_deer_1920x1080.png
 
 exec_always --no-startup-id nitrogen --restore
 bindsym $mod+shift+x exec --no-startup-id $locker
 exec_always --no-startup-id nm-applet
 exec_always --no-startup-id blueman-applet &
-exec_always --no-startup-id xautolock -time 10 -notify 20 -notifier 'notify-send -u low -t 10000 -i messagebox_warning Inactive "Screen is going lock under a minute"' -locker 'i3lock -ntbfe -p default -i $HOME/.config/i3/bg.png'
+exec_always --no-startup-id xautolock -time 10 -notify 20 -notifier 'notify-send -u low -t 10000 -i messagebox_warning Inactive "Screen is going lock under a minute"' -locker 'i3lock -ntbfe -p default -i $HOME/.config/minimal_deer_1920x1080.png'
 exec --no-startup-id brave
 exec --no-startup-id teams-for-linux
 exec --no-startup-id pycharm

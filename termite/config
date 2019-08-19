@@ -8,7 +8,7 @@ font = SauceCodePro Nerd Font Mono  12
 foreground      = #d8d8d8
 foreground_bold = #e8e8e8
 cursor          = #e8e8e8
-background      =  rgba(18, 18, 18, 0.95)
+background      =  rgba(18, 18, 18, 0.75)
 
 # 16 color space
 
