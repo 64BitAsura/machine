@@ -51,4 +51,4 @@ frame_color = "#141c21"
 timeout = 0
 background = "#141c21"
 foreground = "#93a1a1"
-frame_color = "#ff7043"
+frame_color = "#c54741"
